@@ -3,9 +3,10 @@ import 'package:barcode_scanner/theme/theme_config.dart';
 import 'package:barcode_scanner/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import 'home_page.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   kAppStorage = await SharedPreferences.getInstance();
   await ApiService.login();
@@ -22,9 +23,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeColor.lightThemeData,
       darkTheme: ThemeColor.lightThemeData,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const HomePage(),
     );
   }
 }
-
