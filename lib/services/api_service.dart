@@ -104,8 +104,8 @@ class ApiService {
             url,
             headers: {
               'Content-Type': 'application/json',
-              'Cookie':
-                  'session_id=${kAppStorage.getString(PrefConst.sessionId)}',
+              // 'Cookie':
+              //     'session_id=${kAppStorage.getString(PrefConst.sessionId)}',
             },
           )
           .timeout(_timeout);
@@ -115,7 +115,7 @@ class ApiService {
       if ((response.statusCode == 401 || response.statusCode == 403) &&
           retryOnSessionFailure) {
         await kAppStorage.remove(PrefConst.sessionId);
-        final loggedIn = await login();
+       // final loggedIn = await login();
         //if (!loggedIn) return null;
         return getProductByBarcode(cleanBarcode, retryOnSessionFailure: false);
       }

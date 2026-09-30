@@ -9,7 +9,7 @@ import 'home_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   kAppStorage = await SharedPreferences.getInstance();
-  await ApiService.login();
+  //await ApiService.login();
   runApp(const MyApp());
 }
 
